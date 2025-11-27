@@ -258,6 +258,7 @@ Example JSON format:
 
 ### Basic Commands
 
+#### Original ThreadPoolExecutor Implementation
 ```bash
 # Generate LinkedIn post only (default channel)
 python main.py linkedin
@@ -279,6 +280,24 @@ python main.py --topic "Document Compare" --all-channels
 
 # Process specific topic by index (1-based)
 python main.py --topic 1 --all-channels
+```
+
+#### LangGraph Implementation (New)
+```bash
+# Generate LinkedIn post only
+python main_langgraph.py linkedin
+
+# Generate ALL channels in parallel (recommended)
+python main_langgraph.py --all-channels
+
+# Process specific topic by name
+python main_langgraph.py --topic "Document Compare" --all-channels
+
+# With checkpointing (allows resume on failure)
+python main_langgraph.py --all-channels --checkpoint --thread-id my_workflow_123
+
+# Resume from checkpoint
+python main_langgraph.py --resume --thread-id my_workflow_123
 ```
 
 ### Advanced Configuration
@@ -488,8 +507,11 @@ automation_task/
 │   └── Genie AI's new feature Document compare/
 │       ├── parsed_documents.json        # Checkpoint
 │       ├── linkedin.json               # Final LinkedIn post + metadata
+│       ├── linkedin.md                 # LinkedIn post (Markdown format)
 │       ├── newsletter.json             # Final newsletter + metadata
-│       └── blog.json                   # Final blog post + metadata
+│       ├── newsletter.md               # Newsletter (Markdown format)
+│       ├── blog.json                   # Final blog post + metadata
+│       └── blog.md                     # Blog post (Markdown format)
 │
 ├── agents/                              # Agent prompts and logic
 │   ├── base_prompt.txt                 # Shared audience, tone, JSON rules
@@ -524,18 +546,29 @@ automation_task/
 │   ├── extractors.py                   # PDF/DOCX extraction logic
 │   └── schema.py                       # TopicData, ParsedDocuments schemas
 │
+├── langgraph_workflow/                  # LangGraph implementation (NEW)
+│   ├── __init__.py                     # Package initialization
+│   ├── state.py                        # State schemas with reducers
+│   ├── nodes.py                        # Node implementations
+│   └── graphs.py                       # Graph definitions
+│
 ├── docs/                                # Research and planning docs
 │   ├── RESEARCH_LinkedIn_Prompt_Best_Practices.md
 │   ├── RESEARCH_Newsletter_Email_Best_Practices_2025.md
 │   ├── RESEARCH_Blog_Post_Best_Practices_2025.md
 │   ├── RESEARCH_Structured_Output_Schema_Best_Practices_2025.md
+│   ├── RESEARCH_LangGraph_Architecture_Best_Practices_2025.md
+│   ├── PLAN_Migration_to_LangGraph.md
+│   ├── LANGGRAPH_FIX_PLAN.md
+│   ├── LANGGRAPH_IMPLEMENTATION_COMPLETE.md
 │   ├── IMPLEMENTATION_SUMMARY_Parallel_Processing_and_Fixes.md
 │   └── CODE_CLEANUP_SUMMARY.md
 │
 ├── logs/                                # Execution logs
 │   └── workflow.log
 │
-├── main.py                              # Main workflow orchestration
+├── main.py                              # Main workflow (ThreadPoolExecutor)
+├── main_langgraph.py                    # LangGraph workflow (NEW)
 ├── config.json                          # Configuration file
 ├── config_loader.py                     # Config loading utility
 ├── .env                                 # API keys (not committed)
@@ -624,6 +657,66 @@ Instead of concatenating all documents randomly, the system assigns **semantic r
 
 **Benchmark**: ThreadPoolExecutor gives 3x speedup (180s → 60s), which is sufficient for this use case.
 
+### LangGraph Implementation (NEW)
+
+This project now includes a **LangGraph-based workflow** as an alternative to the ThreadPoolExecutor implementation, demonstrating advanced state machine architecture for AI workflows.
+
+**Why LangGraph?**
+- ✅ **State Management**: Proper state schemas with type safety and reducers
+- ✅ **Checkpointing**: Save workflow state and resume from failures
+- ✅ **Observability**: Full execution tracing (LangSmith ready)
+- ✅ **Graph Visualization**: Visual representation of workflow structure
+- ✅ **Human-in-the-Loop**: Pause execution for manual approval
+- ✅ **Scalability**: Easier to extend with complex branching logic
+
+**Architecture:**
+
+```
+Main Graph:
+START → parse_documents → [parallel channel wrappers] → aggregate_results → save_results → END
+                              ↓
+Channel Subgraph (per channel):
+START → load_context → generate → judge → quality_router
+                                            ├─ PASS → finalize → END
+                                            └─ FAIL → refine → judge (loop)
+```
+
+**Key Implementation Details:**
+
+1. **State Separation**: `WorkflowState` (main graph) and `ChannelState` (subgraphs) have **zero overlapping keys** to prevent concurrent update conflicts
+
+2. **Annotated Reducers**: Keys that receive concurrent updates use `Annotated[type, reducer]`:
+   ```python
+   channel_results: Annotated[Dict[str, ChannelResult], merge_channel_results]
+   ```
+
+3. **Wrapper Node Pattern**: Channel subgraphs are invoked via wrapper nodes that:
+   - Extract data from WorkflowState
+   - Create independent ChannelState
+   - Invoke subgraph
+   - Transform result to ChannelResult
+   - Update WorkflowState.channel_results
+
+**Performance Comparison:**
+
+| Metric | ThreadPoolExecutor | LangGraph |
+|--------|-------------------|-----------|
+| Setup Time | Instant | +1-2s |
+| Execution Time | 55-110s | 60-120s |
+| Quality Scores | 9-10/10 | 9-10/10 |
+| State Persistence | None | ✅ Checkpointing |
+| Observability | Logs only | ✅ Full tracing |
+| Resume Capability | None | ✅ Full |
+
+**When to Use Each:**
+- **ThreadPoolExecutor** (`main.py`): Simple, fast, production-ready for basic workflows
+- **LangGraph** (`main_langgraph.py`): Advanced workflows needing state persistence, checkpointing, or complex branching logic
+
+**Documentation:**
+- Full implementation details: `docs/LANGGRAPH_IMPLEMENTATION_COMPLETE.md`
+- Architecture research: `docs/RESEARCH_LangGraph_Architecture_Best_Practices_2025.md`
+- Migration plan: `docs/PLAN_Migration_to_LangGraph.md`
+
 ---
 
 ## 🚀 Future Enhancements
@@ -686,6 +779,13 @@ google-generativeai>=0.3.0   # Gemini API client
 python-dotenv>=1.0.0         # Environment variable management
 pdfplumber>=0.10.0           # PDF text extraction
 python-docx>=1.0.0           # DOCX text extraction
+
+# LangGraph workflow dependencies
+langgraph>=1.0.2             # State machine orchestration
+langchain<1.0.0              # LangChain core (required by langgraph)
+langchain-core<1.0.0         # LangChain core components
+langchain-google-genai>=2.0.10  # Google Gemini integration for LangChain
+langgraph-checkpoint>=3.0.0  # Checkpointing support
 ```
 
 ### Optional (for future enhancements)
@@ -709,10 +809,13 @@ mailchimp-marketing>=3.0.0   # Mailchimp integration
 
 ### Installation
 ```bash
-# Production dependencies
+# Core dependencies (for ThreadPoolExecutor workflow)
 pip install google-generativeai python-dotenv pdfplumber python-docx
 
-# Or use requirements.txt (if created)
+# Additional dependencies for LangGraph workflow
+pip install langgraph langchain langchain-core langchain-google-genai langgraph-checkpoint
+
+# Or install all at once
 pip install -r requirements.txt
 ```
 
@@ -798,4 +901,4 @@ This project demonstrates not just my ability to complete a task, but my capacit
 
 ---
 
-**Ready to transform product launches into automated content pipelines? Run `python main.py --all-channels` and see the magic happen!** ✨
+**Ready to transform product launches into automated content pipelines? Run `python main_langgraph.py --all-channels` and see the magic happen!** ✨

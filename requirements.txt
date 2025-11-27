@@ -1,0 +1,12 @@
+# Core dependencies
+google-generativeai>=0.3.0
+python-dotenv>=1.0.0
+pdfplumber>=0.10.0
+python-docx>=1.0.0
+
+# LangGraph workflow dependencies
+langgraph>=1.0.2
+langchain<1.0.0
+langchain-core<1.0.0
+langchain-google-genai>=2.0.10
+langgraph-checkpoint>=3.0.0
