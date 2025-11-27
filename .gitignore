@@ -47,9 +47,6 @@ logs/**/*.log
 !logs/
 !logs/.gitkeep
 
-# But ignore generated markdown files in output (keep structure only)
-output/**/*.md
-
 # Temporary files
 *.tmp
 *.bak
