@@ -32,7 +32,7 @@ This workflow automates the creation of marketing content for Genie AI feature l
 
 **Target Audience:** Small business executives (4-50 employees), non-legally trained, US-based, looking to minimize time and money spent on legal activities.
 
-**Key Differentiator:** Unlike traditional automation platforms (Zapier, n8n), this solution demonstrates deep understanding of LLM architecture, prompt engineering, and AI agent design patterns—built from scratch to showcase technical expertise and customization capabilities.
+**Key Differentiator:** In addition to what platforms like Zapier or n8n offer, this solution demonstrates how a custom Python workflow can embed LLM architecture, prompt engineering, and AI agent design patterns more deeply, giving extra flexibility and customization when needed.
 
 ---
 
@@ -417,10 +417,7 @@ Save structured JSON files:
 **Monthly Cost** (for 20 feature launches):
 - 20 launches × $0.03 average = **~$0.60/month**
 
-Compare to:
-- n8n Cloud: $20-80/month (depending on executions)
-- Zapier: $29.99/month (Starter plan)
-- Human copywriter: $500-2000 per launch
+(For cost context, typical no-code automation platforms like n8n Cloud or Zapier start around $20–30/month, and hiring a human copywriter for launch campaigns can be in the hundreds. This workflow is intended as a low-cost, reusable building block that could run inside that wider stack.)
 
 ### Processing Time (Benchmarks)
 **Hardware**: Standard laptop (Intel i7, 16GB RAM)
@@ -547,11 +544,11 @@ automation_task/
 
 ## 🧠 Design Decisions
 
-### Why Not Zapier/n8n?
+### How this complements tools like Zapier or n8n
 
-**The Question**: Why build from scratch instead of using no-code platforms?
+**The Question**: When would you use a custom Python workflow instead of only a no-code platform?
 
-**The Answer**: This project is a **demonstration of technical depth**, not just task completion.
+**The Answer**: For this task, I wanted to demonstrate the kind of technical depth Genie could use behind the scenes (LLM agents, structured outputs, semantic parsing), which can then sit alongside tools like Zapier/n8n in a real production stack.
 
 **What Zapier/n8n Provide**:
 - ✅ Visual workflow builder (great for non-technical users)
@@ -784,7 +781,7 @@ I'm passionate about AI and have been working in the field since my bachelor's d
 - **Continuous Learning**: Staying updated with the latest research (Gemini structured outputs, few-shot learning, RAG pipelines)
 - **Pragmatic Engineering**: Balancing cutting-edge techniques with practical, maintainable code
 
-While I recognize the value of no-code platforms like Zapier and n8n for workflow orchestration, I believe the future of AI automation lies in **custom-built intelligent agents** that can be fine-tuned, optimized, and integrated deeply into existing systems.
+While I recognize the value of no-code platforms like Zapier and n8n for workflow orchestration, I’m especially interested in building custom intelligent agents that can be fine-tuned, optimized, and integrated deeply into existing systems. In practice, I see these approaches working together: platforms like Zapier/n8n to coordinate workflows, and custom agents for the AI-heavy parts.
 
 This project demonstrates not just my ability to complete a task, but my capacity to **architect scalable AI solutions** that can grow with Genie AI's needs.
 
