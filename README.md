@@ -460,12 +460,6 @@ Save structured JSON files:
    - Gemini/GPT-4 for judging only
    - **Cost**: ~$0.01 per run
 
-**Recommendation for Genie AI**:
-Since you already have infrastructure for legal document analysis (likely custom-trained models), you could:
-- Deploy a fine-tuned Llama 3.1 model on existing GPU servers
-- Use the same prompt engineering approach
-- Reduce costs to near-zero (only compute, no API fees)
-- Maintain full control and privacy
 
 ---
 
