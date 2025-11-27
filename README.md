@@ -97,14 +97,14 @@ This workflow automates the creation of marketing content for Genie AI feature l
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                   OUTPUT: Structured JSON Files                     │
-│  • linkedin.json (content + hashtags + metadata)                    │
-│  • newsletter.json (subject + body + metadata)                      │
-│  • blog.json (title + content + metadata)                           │
+│                   OUTPUT: Structured Files (JSON + Markdown)        │
+│  • linkedin.json / linkedin.md (content + hashtags + metadata)      │
+│  • newsletter.json / newsletter.md (subject + body + metadata)      │
+│  • blog.json / blog.md (title + content + metadata)                 │
 │  • parsed_documents.json (checkpoint)                               │
 │                                                                      │
-│  Metadata: final_score, passed_quality, refinement_iterations,      │
-│            feedback, model_used, timestamp                           │
+│  JSON: Machine-readable with complete metadata                      │
+│  Markdown: Human-readable for easy sharing and review               │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -138,6 +138,15 @@ This workflow automates the creation of marketing content for Genie AI feature l
 - **LinkedIn**: Mobile-friendly, hook-driven, 3-5 hashtags, 150-300 words
 - **Newsletter**: Scannable bullets, empathetic tone, clear CTA, 200-400 words
 - **Blog**: Problem-solution structure, SEO-friendly, use cases, 800-1200 words
+
+### 📄 Dual Output Formats
+- **JSON Format**: Complete structured data with metadata for programmatic use, API integration, or database storage
+- **Markdown Format**: Clean, readable format with formatting preserved for:
+  - Easy sharing with team members or stakeholders
+  - Quick review and editing
+  - Documentation and archiving
+  - Copy-paste ready for publishing platforms
+  - Includes quality scores, feedback, and generation metadata
 
 ---
 

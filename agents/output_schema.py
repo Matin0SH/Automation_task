@@ -84,6 +84,99 @@ class GeneratedContent:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(self.to_json())
 
+    def to_markdown(self) -> str:
+        """Convert to Markdown format for easy reading and sharing"""
+        lines = []
+
+        # Header
+        lines.append(f"# {self.topic}")
+        lines.append("")
+        lines.append(f"**Channel:** {self.channel.upper()}")
+        lines.append(f"**Generated:** {self.metadata.generated_at}")
+        lines.append(f"**Quality Score:** {self.metadata.final_score}/10 {'✅' if self.metadata.passed_quality else '⚠️'}")
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+
+        # Content based on channel
+        if self.linkedin_post:
+            lines.append("## LinkedIn Post")
+            lines.append("")
+            lines.append(self.linkedin_post.content)
+            lines.append("")
+            if self.linkedin_post.hashtags:
+                lines.append("**Hashtags:** " + " ".join([f"#{tag}" for tag in self.linkedin_post.hashtags]))
+            lines.append("")
+
+        elif self.newsletter:
+            lines.append("## Newsletter Email")
+            lines.append("")
+            lines.append(f"**Subject:** {self.newsletter.subject_line}")
+            lines.append("")
+            lines.append("### Body")
+            lines.append("")
+            lines.append(self.newsletter.body)
+            lines.append("")
+
+        elif self.blog_post:
+            lines.append("## Blog Post")
+            lines.append("")
+            lines.append(f"### {self.blog_post.title}")
+            lines.append("")
+            lines.append(self.blog_post.content)
+            lines.append("")
+
+        # Metadata section
+        lines.append("---")
+        lines.append("")
+        lines.append("## Generation Metadata")
+        lines.append("")
+        lines.append(f"- **Model:** {self.metadata.model_used}")
+        lines.append(f"- **Final Score:** {self.metadata.final_score}/10")
+        lines.append(f"- **Quality Check:** {'Passed ✅' if self.metadata.passed_quality else 'Failed ⚠️'}")
+        lines.append(f"- **Refinement Iterations:** {self.metadata.refinement_iterations}")
+        lines.append("")
+
+        # Feedback
+        if self.metadata.final_feedback:
+            feedback = self.metadata.final_feedback
+
+            if feedback.get('strengths'):
+                lines.append("### Strengths")
+                lines.append("")
+                for strength in feedback['strengths']:
+                    lines.append(f"- ✅ {strength}")
+                lines.append("")
+
+            if feedback.get('weaknesses'):
+                lines.append("### Weaknesses")
+                lines.append("")
+                for weakness in feedback['weaknesses']:
+                    lines.append(f"- ⚠️ {weakness}")
+                lines.append("")
+
+            if feedback.get('suggestions'):
+                lines.append("### Suggestions")
+                lines.append("")
+                for suggestion in feedback['suggestions']:
+                    lines.append(f"- 💡 {suggestion}")
+                lines.append("")
+
+        # Refinement history
+        if self.metadata.refinement_history:
+            lines.append("### Refinement History")
+            lines.append("")
+            for i, history in enumerate(self.metadata.refinement_history, 1):
+                lines.append(f"**Iteration {i}:** Score {history.get('score', 0)}/10")
+                lines.append("")
+
+        return "\n".join(lines)
+
+    def save_to_markdown(self, output_path: str) -> None:
+        """Save to Markdown file"""
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(self.to_markdown())
+
 
 # Gemini structured output schemas
 # These enforce the structure at the API level - the model CANNOT output invalid JSON

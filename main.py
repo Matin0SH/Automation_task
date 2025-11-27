@@ -93,16 +93,22 @@ def generate_channel_content(channel, topic_data, config, logger, topic_output_d
             }
         )
 
-        # Save channel output
+        # Save channel output (both JSON and Markdown)
         content_output_file = topic_output_dir / f"{channel}.json"
+        content_markdown_file = topic_output_dir / f"{channel}.md"
+
         result.save_to_file(str(content_output_file))
+        result.save_to_markdown(str(content_markdown_file))
+
         logger.info(f"Saved {channel} content: {content_output_file}")
+        logger.info(f"Saved {channel} markdown: {content_markdown_file}")
 
         return {
             'channel': channel,
             'success': True,
             'score': result.metadata.final_score,
-            'file': str(content_output_file)
+            'file': str(content_output_file),
+            'markdown': str(content_markdown_file)
         }
 
     except Exception as e:
@@ -170,7 +176,9 @@ def process_topic(topic_name, topic_data, channels, config, logger):
 
                 # Display result
                 if channel_result['success']:
-                    print(f"[OK] {channel.capitalize()} content saved: {channel_result['file']}")
+                    print(f"[OK] {channel.capitalize()} content saved:")
+                    print(f"     JSON: {channel_result['file']}")
+                    print(f"     Markdown: {channel_result['markdown']}")
                 else:
                     print(f"[ERROR] Failed to generate {channel} content: {channel_result['error']}")
 
