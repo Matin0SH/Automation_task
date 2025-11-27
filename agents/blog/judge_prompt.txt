@@ -1,0 +1,232 @@
+# BLOG POST JUDGE PROMPT
+
+## TASK
+Evaluate the blog post for quality, effectiveness, and adherence to B2B SaaS content marketing best practices.
+
+## EVALUATION CRITERIA
+
+Score each criterion out of 10, then calculate the average:
+
+### 1. TITLE EFFECTIVENESS (10 points)
+- **Length**: 50-80 characters (SEO-optimized)
+- **Keyword Inclusion**: Contains feature name or primary keyword
+- **Value Proposition**: Promises clear benefit
+- **Compelling**: Creates curiosity without clickbait
+- **Power Words**: Uses action words (Introducing, Transform, Simplify)
+
+**Scoring Guide**:
+- 9-10: Perfect length, SEO-optimized, highly compelling, clear value
+- 7-8: Good title with minor improvements possible
+- 5-6: Acceptable but could be more engaging or SEO-friendly
+- 3-4: Weak, too long/short, or missing key elements
+- 1-2: Poor title unlikely to drive clicks or rank
+
+### 2. OPENING HOOK STRENGTH (10 points)
+- **Problem-Focused**: Starts with relatable pain point or challenge
+- **Audience Relevance**: Speaks directly to target reader's experience
+- **Engagement**: Grabs attention and builds tension
+- **Specificity**: Uses concrete scenarios, not generic statements
+
+**Scoring Guide**:
+- 9-10: Immediately engaging, highly relatable, builds strong tension
+- 7-8: Good hook with room for more specificity
+- 5-6: Decent opening but could be more compelling
+- 3-4: Generic or weak connection to audience
+- 1-2: Fails to engage or irrelevant
+
+### 3. PROBLEM EXPLANATION DEPTH (10 points)
+- **Thorough**: Adequately explores the challenge
+- **Empathetic**: Shows understanding of audience struggles
+- **Evidence-Based**: References customer feedback or real scenarios
+- **Builds Case**: Creates need for the solution
+
+**Scoring Guide**:
+- 9-10: Thorough, empathetic, well-evidenced problem exploration
+- 7-8: Good explanation with minor gaps
+- 5-6: Adequate but could be deeper or more specific
+- 3-4: Superficial or disconnected from audience reality
+- 1-2: Poor or missing problem explanation
+
+### 4. SOLUTION CLARITY (10 points)
+- **Clear Introduction**: Feature presented simply and understandably
+- **Outcome-Focused**: Emphasizes results, not technical specs
+- **Accessible Language**: No jargon, easy for non-technical readers
+- **Vision Casting**: Paints picture of improved workflow
+
+**Scoring Guide**:
+- 9-10: Crystal clear, outcome-focused, accessible, inspiring
+- 7-8: Clear with room for simplification
+- 5-6: Understandable but somewhat technical or vague
+- 3-4: Confusing or too feature-focused
+- 1-2: Unclear or inaccessible solution explanation
+
+### 5. BENEFITS COMMUNICATION (10 points)
+- **Quantified**: Uses specific numbers (hours saved, efficiency %)
+- **Tangible**: Benefits are concrete and measurable
+- **Prioritized**: Most important benefits come first
+- **Comprehensive**: Covers 4-6 key benefits adequately
+
+**Scoring Guide**:
+- 9-10: Specific, quantified, prioritized, comprehensive benefits
+- 7-8: Good benefits with room for more quantification
+- 5-6: Benefits present but vague or under-explained
+- 3-4: Weak or feature-focused instead of benefit-focused
+- 1-2: Missing or poorly communicated benefits
+
+### 6. STRUCTURE & SCANNABILITY (10 points)
+- **Headers**: Uses H2/H3 subheadings effectively
+- **Short Paragraphs**: 3-4 sentences maximum
+- **Bullet Points**: Benefits and lists properly formatted
+- **White Space**: Adequate breaks between sections
+- **Logical Flow**: Follows Hook → Problem → Solution → Benefits → CTA
+
+**Scoring Guide**:
+- 9-10: Perfectly scannable, well-structured, easy to navigate
+- 7-8: Good structure with minor formatting improvements
+- 5-6: Acceptable but could use better headers or breaks
+- 3-4: Dense or poorly organized
+- 1-2: Wall of text, poor structure
+
+### 7. USE CASES & SOCIAL PROOF (10 points)
+- **Specific Scenarios**: Provides 1-2 concrete use cases
+- **Authentic Quotes**: Uses real customer feedback
+- **Relatable**: Examples resonate with target audience
+- **Credible**: Trust-building elements present
+
+**Scoring Guide**:
+- 9-10: Specific, authentic, relatable use cases with strong proof
+- 7-8: Good examples with room for more specificity
+- 5-6: Has use cases but generic or weak
+- 3-4: Vague or unconvincing examples
+- 1-2: Missing use cases or social proof
+
+### 8. CALL-TO-ACTION EFFECTIVENESS (10 points)
+- **Clarity**: Single, specific action to take
+- **Frictionless**: Easy to execute, no barriers
+- **Visibility**: Stands out clearly in the post
+- **Action Language**: Uses compelling verbs
+
+**Scoring Guide**:
+- 9-10: Crystal clear, compelling, easy CTA
+- 7-8: Good CTA with minor improvements possible
+- 5-6: CTA present but could be clearer
+- 3-4: Vague or multiple competing CTAs
+- 1-2: Missing or ineffective CTA
+
+### 9. TONE & VOICE (10 points)
+- **Professional**: Establishes authority and credibility
+- **Conversational**: Accessible, not overly academic
+- **Educational**: Teaches, doesn't just sell
+- **Consistent**: Maintains tone throughout
+
+**Scoring Guide**:
+- 9-10: Perfect balance of professional and conversational
+- 7-8: Good tone with occasional lapses
+- 5-6: Mostly appropriate but some inconsistency
+- 3-4: Too formal, too casual, or salesy
+- 1-2: Inappropriate or inconsistent tone
+
+### 10. CONTENT LENGTH & COMPLETENESS (10 points)
+- **Word Count**: 400-800 words (comprehensive yet focused)
+- **Completeness**: Covers all necessary elements
+- **Conciseness**: No unnecessary fluff
+- **Pacing**: Flows smoothly from section to section
+
+**Scoring Guide**:
+- 9-10: Perfect length, complete, concise, well-paced
+- 7-8: Good length with minor wordiness or gaps
+- 5-6: Acceptable but could be tighter or more complete
+- 3-4: Too long/short or poorly paced
+- 1-2: Significantly over/under word count
+
+## RED FLAGS (Automatic Quality Failure)
+
+If ANY of these are present, the blog post fails quality check:
+
+1. **Legal Advice Implication**: Sounds like providing legal counsel
+2. **Overpromising**: Unrealistic claims about capabilities
+3. **Jargon Overload**: Technical/legal terms without explanation
+4. **Missing CTA**: No clear next step
+5. **No Customer Voice**: Doesn't reference customer feedback
+6. **Feature Dump**: Lists specs without explaining benefits
+7. **Corporate Buzzwords**: Overuse of "synergy", "leverage", etc.
+8. **Poor SEO**: Title too long/short or keyword-stuffed
+9. **Too Short**: Under 300 words (not comprehensive)
+10. **Too Long**: Over 1000 words (loses reader attention)
+
+## SCORING & PASS/FAIL
+
+### Calculate Final Score:
+1. Score each of the 10 criteria (1-10 points each)
+2. Calculate average: (Sum of all scores) / 10
+3. Round to nearest whole number
+
+### Pass/Fail Criteria:
+- **PASS**: Score ≥ 7 AND no red flags present
+- **FAIL**: Score < 7 OR any red flag present
+
+## FEEDBACK STRUCTURE
+
+### STRENGTHS
+- List 3-5 specific things the post does well
+- Reference exact sections or phrases
+- Explain why these work for the target audience
+
+### WEAKNESSES
+- List 2-4 specific issues or missed opportunities
+- Provide concrete examples
+- Explain impact on reader engagement
+
+### SUGGESTIONS
+- Provide 3-5 actionable improvements
+- Be specific with examples
+- Prioritize high-impact changes
+
+## THE BLOG POST TO EVALUATE
+
+{POST_CONTENT_PLACEHOLDER}
+
+## OUTPUT REQUIREMENTS
+
+Return a valid JSON object with this exact structure:
+
+```json
+{
+  "score": 8,
+  "passes_quality": true,
+  "criteria_scores": {
+    "title_effectiveness": 9,
+    "opening_hook_strength": 8,
+    "problem_explanation_depth": 8,
+    "solution_clarity": 9,
+    "benefits_communication": 8,
+    "structure_scannability": 9,
+    "use_cases_social_proof": 7,
+    "cta_effectiveness": 8,
+    "tone_voice": 9,
+    "content_length_completeness": 8
+  },
+  "feedback": {
+    "strengths": [
+      "Strength 1 with specific example",
+      "Strength 2 with specific example",
+      "..."
+    ],
+    "weaknesses": [
+      "Weakness 1 with specific example",
+      "Weakness 2 with specific example",
+      "..."
+    ],
+    "suggestions": [
+      "Specific actionable suggestion 1",
+      "Specific actionable suggestion 2",
+      "..."
+    ]
+  },
+  "red_flags": [
+    "List any red flags found, or empty array if none"
+  ]
+}
+```
+
+Now evaluate the blog post above using these criteria.

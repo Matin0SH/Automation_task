@@ -1,0 +1,148 @@
+# LINKEDIN POST GENERATOR PROMPT
+
+## TASK
+Generate a compelling LinkedIn post to announce and create excitement for the new feature.
+
+## LINKEDIN-SPECIFIC REQUIREMENTS
+
+### Format Specifications
+- **Length**: 150-300 words (short and punchy)
+- **Mobile-friendly**: Use line breaks after every 1-2 sentences
+- **Structure**: Hook → Context → Solution → Benefits → Proof → CTA
+- **Hashtags**: Include exactly 3-5 relevant hashtags at the end
+
+### Content Structure
+
+#### 1. HOOK (1-2 lines)
+- Start with a pain point, surprising stat, or provocative question
+- Must stop the scroll - make it impossible to ignore
+- Trigger an emotion: frustration, recognition, curiosity
+- Examples:
+  - "Stop wasting 3 hours manually comparing contract redlines."
+  - "Ever spent an entire afternoon hunting for what changed in a contract?"
+  - "Your lawyer charges $400/hour to compare two documents. There's a better way."
+
+#### 2. CONTEXT (2-3 lines)
+- Relate to the reader's experience
+- Build empathy and understanding
+- Use a customer quote from the feedback if relevant
+- Show you understand their world
+
+#### 3. SOLUTION INTRODUCTION (1-2 lines)
+- Present the feature simply and clearly
+- Focus on the benefit, not the technology
+- Make it feel accessible and easy
+
+#### 4. KEY BENEFITS (3-5 bullet points or short lines)
+- Each benefit on its own line with line breaks
+- Focus on outcomes, not features
+- Use specific, quantifiable language when possible
+- Format options:
+  - "→ Benefit one"
+  - "✓ Benefit two" (if emojis fit the tone)
+  - Simple bullets
+
+#### 5. SOCIAL PROOF OR EXAMPLE (1-2 lines)
+- Customer quote from feedback documents
+- Internal team reaction
+- Use case scenario
+- Builds credibility and relatability
+
+#### 6. CALL TO ACTION (1-2 lines)
+- Clear, single action to take
+- Make it easy and friction-free
+- Examples:
+  - "Try it free: [link]"
+  - "See it in action: [link]"
+  - "Start comparing contracts today: [link]"
+
+#### 7. HASHTAGS (3-5)
+- Mix of broad and specific
+- Relevant to legal tech, startups, small business
+- Examples: #LegalTech #Startups #SmallBusiness #Contracts #Founders
+
+### Tone & Style
+- Professional but conversational
+- Confident without being arrogant
+- Helpful and empathetic
+- Authentic - sound human, not corporate
+- Energetic and engaging
+
+### Advanced Techniques to Apply
+
+#### Multi-Persona Approach
+Think as three experts collaborating:
+1. **Marketing Strategist** - Knows how to position B2B SaaS value
+2. **LinkedIn Copywriter** - Understands what performs on the platform
+3. **Small Business Owner** - Experienced the pain points firsthand
+
+#### Chain-of-Thought Analysis
+Before writing, consider:
+1. What is the #1 pain point for this audience?
+2. What emotion should the hook trigger?
+3. What's the most compelling benefit to highlight?
+4. Which customer quote is most relatable?
+5. What action is easiest for readers to take?
+
+#### Self-Reflection
+After drafting, review:
+- Is the hook compelling enough to stop scrolling?
+- Does it address real audience pain points?
+- Are benefits clear and specific?
+- Is the CTA obvious and actionable?
+- Are sentences short and scannable?
+
+## EXAMPLES OF GOOD LINKEDIN POSTS
+
+The following examples demonstrate the style, tone, and structure we're aiming for:
+
+{EXAMPLES_PLACEHOLDER}
+
+## OUTPUT REQUIREMENTS
+
+You must return a valid JSON object with this exact structure:
+
+```json
+{
+  "content": "The full LinkedIn post text with line breaks preserved as \\n characters",
+  "hashtags": ["Hashtag1", "Hashtag2", "Hashtag3"]
+}
+```
+
+### CRITICAL JSON Formatting Rules - FOLLOW EXACTLY:
+
+**THESE RULES ARE MANDATORY - VIOLATIONS WILL CAUSE SYSTEM FAILURE:**
+
+1. **ESCAPE ALL DOUBLE QUOTES IN STRING VALUES**
+   - When including customer quotes, you MUST escape internal quotes
+   - WRONG: "content": "Users say "this is great" for business"
+   - CORRECT: "content": "Users say \"this is great\" for business"
+   - BETTER: "content": "Users say 'this is great' for business"
+
+2. **USE SINGLE QUOTES FOR CUSTOMER QUOTES**
+   - Prefer single quotes to avoid escaping: 'quote here'
+   - This prevents JSON parsing errors
+
+3. **VALIDATE YOUR OUTPUT**
+   - Your JSON must be parseable by standard parsers
+   - Every opening quote needs proper closing
+   - Check for unescaped quotes before responding
+
+4. **STANDARD REQUIREMENTS:**
+   - Escape line breaks as `\n` in the content string
+   - Hashtags array should contain 3-5 strings WITHOUT the # symbol
+   - The entire response must be valid JSON
+   - Do not include any text outside the JSON object
+   - Do not use markdown code blocks - return raw JSON only
+
+## CRITICAL REMINDERS
+
+1. Use simple language - the audience is NOT legally trained
+2. Focus on TIME SAVED and EASE OF USE
+3. Don't make it sound like legal advice or a lawyer replacement
+4. Pull authentic quotes from Customer Feedback documents - USE SINGLE QUOTES for all customer quotes
+5. Quantify benefits when possible (hours saved, clicks reduced, etc.)
+6. Keep it conversational and relatable
+7. Make the CTA frictionless and clear
+
+Now generate the LinkedIn post based on the topic and source documents provided.

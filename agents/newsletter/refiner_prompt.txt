@@ -1,0 +1,130 @@
+# NEWSLETTER EMAIL REFINER PROMPT
+
+## TASK
+Improve the newsletter email based on judge feedback to pass quality standards.
+
+## ORIGINAL EMAIL
+
+{ORIGINAL_POST_PLACEHOLDER}
+
+## QUALITY ASSESSMENT
+
+**Score**: {SCORE}/10 | **Status**: {PASS_FAIL}
+
+### Criteria Scores:
+{CRITERIA_SCORES_PLACEHOLDER}
+
+### Strengths:
+{STRENGTHS_PLACEHOLDER}
+
+### Weaknesses:
+{WEAKNESSES_PLACEHOLDER}
+
+### Suggestions:
+{SUGGESTIONS_PLACEHOLDER}
+
+### Red Flags:
+{RED_FLAGS_PLACEHOLDER}
+
+## YOUR MISSION
+
+Refine the email to achieve a score of 7+ by:
+1. **Preserving strengths** - Keep what works well
+2. **Fixing weaknesses** - Address each issue identified
+3. **Implementing suggestions** - Apply actionable feedback
+4. **Removing red flags** - Eliminate any disqualifying issues
+
+## REFINEMENT PRIORITIES
+
+### High Priority (Must Fix):
+- Any red flags present
+- Subject line issues (length, clarity, spam triggers)
+- Missing or weak CTA
+- Jargon or corporate language
+- Lack of customer quotes/social proof
+
+### Medium Priority (Should Improve):
+- Opening hook strength
+- Benefit clarity and quantification
+- Structure and scannability
+- Tone and authenticity
+- Audience relevance
+
+### Low Priority (Nice to Have):
+- Word count optimization
+- Additional personalization
+- Minor wording improvements
+
+## REFINEMENT GUIDELINES
+
+### Subject Line Refinement:
+- Keep 50-80 characters
+- Use action verbs or questions
+- Communicate clear value
+- Avoid spam triggers (caps, !!!, "FREE")
+- Make it curiosity-driven yet honest
+
+### Opening Hook Refinement:
+- Start with empathy and pain points
+- Make it conversational, not corporate
+- Grab attention in first 2 lines
+- Use relatable scenarios
+
+### Benefits Refinement:
+- Quantify (hours saved, efficiency %)
+- Lead with outcomes, not features
+- Use bullet points for scannability
+- Prioritize time savings and ease of use
+
+### Social Proof Refinement:
+- Use authentic customer quotes from source docs
+- Make testimonials specific and relatable
+- Show real use cases
+
+### CTA Refinement:
+- Single, clear action
+- Use action verbs
+- Make it frictionless
+- Create gentle urgency
+
+### Tone Refinement:
+- Write conversationally (like an email to a colleague)
+- Use "you" and "we"
+- Avoid buzzwords: "synergy", "leverage", "best-in-class"
+- Stay helpful, not salesy
+
+## OUTPUT REQUIREMENTS
+
+Return a valid JSON object with this exact structure:
+
+```json
+{
+  "subject_line": "Refined subject line (50-80 characters)",
+  "body": "Refined email body with line breaks as \\n",
+  "changes_made": [
+    "Specific change 1: what you fixed and why",
+    "Specific change 2: what you fixed and why",
+    "..."
+  ]
+}
+```
+
+### Important Rules:
+- Maintain the same basic structure (Hook → Context → Benefits → Proof → CTA)
+- Don't completely rewrite—improve what's there
+- Keep the core message and feature benefits
+- Escape line breaks as `\n` in body string
+- List all significant changes in changes_made array
+
+## CRITICAL REMINDERS
+
+1. **Preserve Good Elements**: Don't fix what isn't broken
+2. **Address All Weaknesses**: Every weakness should be improved
+3. **Implement Suggestions**: Apply the judge's specific recommendations
+4. **Maintain Authenticity**: Keep it human and conversational
+5. **No Overpromising**: Stay realistic about feature capabilities
+6. **Simple Language**: Avoid jargon—write for non-technical readers
+7. **Customer Voice**: Include authentic customer quotes
+8. **Quantify Benefits**: Use specific numbers for impact
+
+Now refine the newsletter email to pass quality standards.

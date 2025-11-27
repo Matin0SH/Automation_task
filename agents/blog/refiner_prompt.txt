@@ -1,0 +1,155 @@
+# BLOG POST REFINER PROMPT
+
+## TASK
+Improve the blog post based on judge feedback to pass quality standards.
+
+## ORIGINAL BLOG POST
+
+{ORIGINAL_POST_PLACEHOLDER}
+
+## QUALITY ASSESSMENT
+
+**Score**: {SCORE}/10 | **Status**: {PASS_FAIL}
+
+### Criteria Scores:
+{CRITERIA_SCORES_PLACEHOLDER}
+
+### Strengths:
+{STRENGTHS_PLACEHOLDER}
+
+### Weaknesses:
+{WEAKNESSES_PLACEHOLDER}
+
+### Suggestions:
+{SUGGESTIONS_PLACEHOLDER}
+
+### Red Flags:
+{RED_FLAGS_PLACEHOLDER}
+
+## YOUR MISSION
+
+Refine the blog post to achieve a score of 7+ by:
+1. **Preserving strengths** - Keep what works well
+2. **Fixing weaknesses** - Address each issue identified
+3. **Implementing suggestions** - Apply actionable feedback
+4. **Removing red flags** - Eliminate any disqualifying issues
+
+## REFINEMENT PRIORITIES
+
+### High Priority (Must Fix):
+- Any red flags present
+- Title issues (length, SEO, clarity)
+- Missing or weak CTA
+- Jargon or overly technical language
+- Lack of customer quotes/social proof
+- Poor structure or scannability
+
+### Medium Priority (Should Improve):
+- Opening hook strength
+- Problem explanation depth
+- Solution clarity
+- Benefit quantification
+- Use case specificity
+- Tone and voice consistency
+
+### Low Priority (Nice to Have):
+- Word count optimization
+- Additional examples
+- Minor wording improvements
+
+## REFINEMENT GUIDELINES
+
+### Title Refinement:
+- Keep 50-80 characters
+- Include feature name or primary keyword
+- Use power words (Introducing, Transform, New)
+- Promise clear value or benefit
+- Create curiosity without clickbait
+
+### Hook Refinement:
+- Start with specific, relatable pain point
+- Build tension around the problem
+- Use concrete scenarios, not generic statements
+- Make it immediately relevant to target audience
+
+### Problem Explanation Refinement:
+- Deepen the exploration of the challenge
+- Add customer feedback quotes
+- Show empathy and understanding
+- Build the case for why a solution is needed
+
+### Solution Introduction Refinement:
+- Present feature simply and clearly
+- Focus on outcomes, not technical specs
+- Use plain, accessible language
+- Paint a vision of improved workflow
+
+### Benefits Refinement:
+- Quantify (hours saved, efficiency %, cost reduction)
+- Make benefits tangible and measurable
+- Prioritize most important benefits first
+- Cover 4-6 key benefits with explanations
+
+### Structure Refinement:
+- Add H2/H3 subheadings for each section
+- Keep paragraphs to 3-4 sentences max
+- Use bullet points for benefits lists
+- Add white space between sections
+- Follow logical flow: Hook → Problem → Solution → Benefits → Use Cases → CTA
+
+### Use Cases & Social Proof Refinement:
+- Add 1-2 specific, relatable scenarios
+- Include authentic customer quotes from source docs
+- Show before/after comparisons
+- Build credibility with concrete examples
+
+### CTA Refinement:
+- Single, clear action to take
+- Use action verbs (Try, Start, Get, See)
+- Make it frictionless and inviting
+- Create gentle urgency
+
+### Tone Refinement:
+- Balance professional and conversational
+- Establish authority without being academic
+- Teach, don't just sell
+- Maintain consistency throughout
+
+## OUTPUT REQUIREMENTS
+
+Return a valid JSON object with this exact structure:
+
+```json
+{
+  "title": "Refined blog post title (50-80 characters)",
+  "content": "Refined blog post content with line breaks as \\n",
+  "changes_made": [
+    "Specific change 1: what you fixed and why",
+    "Specific change 2: what you fixed and why",
+    "..."
+  ]
+}
+```
+
+### Important Rules:
+- Maintain the same basic structure and core message
+- Don't completely rewrite—improve what's there
+- Keep feature benefits and key points
+- Escape line breaks as `\n` in content string
+- Use `\\n\\n` for paragraph breaks
+- List all significant changes in changes_made array
+
+## CRITICAL REMINDERS
+
+1. **Preserve Good Elements**: Don't fix what isn't broken
+2. **Address All Weaknesses**: Every weakness should be improved
+3. **Implement Suggestions**: Apply the judge's specific recommendations
+4. **Maintain Authenticity**: Keep it genuine and credible
+5. **No Overpromising**: Stay realistic about feature capabilities
+6. **Simple Language**: Avoid jargon—write for non-technical readers
+7. **Customer Voice**: Include authentic customer quotes
+8. **Quantify Benefits**: Use specific numbers for impact
+9. **SEO-Conscious**: Keep title optimized and keywords natural
+10. **Scannable**: Use headers, bullets, short paragraphs
+
+Now refine the blog post to pass quality standards.

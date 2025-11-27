@@ -1,0 +1,196 @@
+# NEWSLETTER EMAIL GENERATOR PROMPT
+
+## TASK
+Generate a compelling newsletter email to announce and create excitement for the new feature launch.
+
+## NEWSLETTER-SPECIFIC REQUIREMENTS
+
+### Format Specifications
+- **Subject Line Length**: 50-80 characters (64% of readers decide based on subject line alone)
+- **Email Body Length**: 200-400 words (concise, scannable, valuable)
+- **Structure**: Subject → Hook → Context → Feature Intro → Benefits → Social Proof → CTA
+- **Tone**: Conversational, personal, helpful (write how you talk)
+
+### Subject Line Principles
+
+#### Characteristics of High-Performing Subject Lines
+- Short, specific, and curiosity-driven
+- Use action verbs or pose intriguing questions
+- Immediately communicate the value readers will gain
+- Keep it actionable and concise
+- Avoid spam triggers (excessive caps, exclamation marks, "FREE!!!")
+
+#### Examples of Good Subject Lines
+- "You asked, we built it: [Feature Name] is here"
+- "Stop wasting hours on [pain point]. Try this instead."
+- "New: [Feature] saves you [quantifiable benefit]"
+- "Finally—a better way to [solve specific problem]"
+- "This changes everything about [relevant workflow]"
+
+### Email Body Structure
+
+#### 1. OPENING HOOK (1-2 lines)
+- Start with empathy—acknowledge a pain point your readers face
+- Use a relatable scenario or question
+- Make it personal and conversational
+- Examples:
+  - "We've all been there: spending hours on [tedious task] when you'd rather focus on growing your business."
+  - "Remember the last time you [specific frustration]? We heard you."
+
+#### 2. CONTEXT & UNDERSTANDING (2-3 lines)
+- Show you understand their world and challenges
+- Reference customer feedback or common complaints
+- Build rapport with personal touches or anecdotes
+- Connect emotionally before pitching the solution
+
+#### 3. FEATURE INTRODUCTION (1-2 lines)
+- Present the new feature clearly and simply
+- Focus on the outcome, not the technology
+- Use plain language—avoid jargon
+- Make it feel accessible and easy
+
+#### 4. KEY BENEFITS (3-5 bullet points with visual breaks)
+- Focus on time saved, ease of use, and tangible outcomes
+- Use specific, quantifiable language when possible
+- Format with line breaks for scannability
+- Each benefit should answer "What's in it for me?"
+- Format examples:
+  - "✓ Save 3+ hours per week on [task]"
+  - "→ Instantly [achieve outcome] without [pain point]"
+  - "• Get [specific result] in minutes, not hours"
+
+#### 5. SOCIAL PROOF (1-2 lines)
+- Include authentic customer quotes from feedback documents
+- Use beta tester reactions or early adopter testimonials
+- Showcase real use cases that readers can relate to
+- Builds trust and credibility
+
+#### 6. CLEAR CALL TO ACTION (1-2 lines)
+- Single, specific action to take
+- Make it frictionless and easy
+- Use action-oriented language
+- Examples:
+  - "Try [Feature] free today: [link]"
+  - "See it in action: [link]"
+  - "Get started now: [link]"
+
+#### 7. CLOSING (1 line)
+- Keep it warm and personal
+- Sign with a name (not just "The Team")
+- Examples:
+  - "Excited to hear what you think!"
+  - "Here's to working smarter, not harder."
+
+### Tone & Style Guidelines
+
+- **Conversational**: Write like you're emailing a colleague, not giving a presentation
+- **Personal**: Use "you" and "we" frequently; add personal anecdotes where relevant
+- **Helpful**: Position the feature as solving their problem, not promoting your product
+- **Authentic**: Sound human, not corporate—avoid marketing buzzwords
+- **Specific**: Use concrete examples and quantifiable benefits
+
+### Visual & Formatting Best Practices
+
+- Use short paragraphs (2-3 lines max)
+- Add line breaks between sections for easy scanning
+- Use bullet points or numbered lists for benefits
+- Bold key phrases or benefits (sparingly)
+- Keep CTAs visually distinct and easy to click
+- Mobile-friendly: 60-70% of emails are opened on mobile
+
+### Advanced Techniques to Apply
+
+#### Personalization Strategy
+- Address specific pain points from customer feedback
+- Reference common scenarios your target audience faces
+- Use industry-specific language they understand
+- Tailor examples to small business owners, founders, or executives
+
+#### Value-First Approach
+- Lead with benefits, not features
+- Answer "What's in it for me?" within the first 3 sentences
+- Quantify value (time saved, money saved, efficiency gained)
+- Make the reader the hero of the story, not your product
+
+#### Storytelling Elements
+- Start with a relatable problem or frustration
+- Build tension around the pain point
+- Introduce your feature as the resolution
+- End with a vision of their improved workflow
+
+### Email Marketing Best Practices (2025)
+
+- **Quality Over Quantity**: One valuable email is better than daily spam
+- **Relevance**: Ensure the feature is actually useful to the recipient
+- **Timing**: Tuesday and Thursday are optimal send days for B2B SaaS
+- **Testing**: A/B test subject lines when possible
+- **Trust Signals**: Include author name, company credibility markers
+- **No Overpromising**: Be honest about what the feature does
+
+## EXAMPLES OF GOOD NEWSLETTER EMAILS
+
+The following examples demonstrate the style, tone, and structure we're aiming for:
+
+{EXAMPLES_PLACEHOLDER}
+
+## OUTPUT REQUIREMENTS
+
+You must return a valid JSON object with this exact structure:
+
+```json
+{
+  "subject_line": "Compelling email subject line (50-80 characters)",
+  "body": "The full email body text with line breaks preserved as \\n characters"
+}
+```
+
+### CRITICAL JSON Formatting Rules - FOLLOW EXACTLY:
+
+**THESE RULES ARE MANDATORY - VIOLATIONS WILL CAUSE SYSTEM FAILURE:**
+
+1. **ESCAPE ALL DOUBLE QUOTES IN STRING VALUES**
+   - When including customer quotes, you MUST escape internal quotes
+   - WRONG: "body": "Users say "this is great" for business"
+   - CORRECT: "body": "Users say \"this is great\" for business"
+   - BETTER: "body": "Users say 'this is great' for business"
+
+2. **USE SINGLE QUOTES FOR CUSTOMER QUOTES**
+   - Prefer single quotes to avoid escaping: 'quote here'
+   - This prevents JSON parsing errors
+
+3. **VALIDATE YOUR OUTPUT**
+   - Your JSON must be parseable by standard parsers
+   - Every opening quote needs proper closing
+   - Check for unescaped quotes before responding
+
+4. **STANDARD REQUIREMENTS:**
+   - Escape line breaks as `\n` in the body string
+   - subject_line should be compelling and attention-grabbing (50-80 characters)
+   - The entire response must be valid JSON
+   - Do not include any text outside the JSON object
+   - Do not use markdown code blocks - return raw JSON only
+
+## CRITICAL REMINDERS
+
+1. **Simple Language**: The audience is NOT legally trained—avoid legalese and jargon
+2. **Focus on Outcomes**: TIME SAVED and EASE OF USE are the primary selling points
+3. **Not Legal Advice**: Don't make it sound like legal advice or a lawyer replacement
+4. **Authentic Quotes**: Pull real, relatable quotes from Customer Feedback documents - USE SINGLE QUOTES for all customer quotes
+5. **Quantify Benefits**: Use specific numbers (hours saved, clicks reduced, etc.)
+6. **Stay Conversational**: Write like a helpful colleague, not a sales rep
+7. **Frictionless CTA**: Make the next step crystal clear and easy
+8. **Mobile-Friendly**: Short paragraphs, clear formatting, scannable structure
+
+## FINAL CHECKLIST
+
+Before finalizing the email, verify:
+- ✓ Subject line is 50-80 characters and sparks curiosity
+- ✓ Opening hook addresses a real pain point
+- ✓ Benefits are outcome-focused and quantifiable
+- ✓ Language is conversational and jargon-free
+- ✓ Customer quote is authentic and relatable
+- ✓ CTA is clear, specific, and frictionless
+- ✓ Email is scannable with short paragraphs and line breaks
+- ✓ Tone is helpful and personal, not salesy
+
+Now generate the newsletter email based on the topic and source documents provided.

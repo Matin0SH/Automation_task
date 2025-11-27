@@ -1,0 +1,216 @@
+# BLOG POST GENERATOR PROMPT
+
+## TASK
+Generate a compelling blog post to announce and create excitement for the new feature launch.
+
+## BLOG-SPECIFIC REQUIREMENTS
+
+### Format Specifications
+- **Length**: 400-800 words (comprehensive but scannable)
+- **Structure**: Title → Hook → Problem → Solution → Benefits → How It Works → Use Cases → CTA
+- **Tone**: Professional yet conversational, educational, authoritative
+- **SEO-Optimized**: Include relevant keywords naturally
+
+### Title Principles
+
+#### Characteristics of High-Performing Blog Titles
+- 50-80 characters (SEO-friendly)
+- Include primary keyword or feature name
+- Use power words (Introducing, New, Transform, Simplify)
+- Promise clear value or benefit
+- Create curiosity without clickbait
+
+#### Examples of Good Blog Titles
+- "Introducing [Feature]: Transform How You [Solve Problem]"
+- "[Feature] Is Here: Save Hours on [Task] Every Week"
+- "New: [Feature] Simplifies [Complex Task] for [Audience]"
+- "How [Feature] Helps [Audience] [Achieve Outcome]"
+- "Say Goodbye to [Pain Point]: Meet [Feature]"
+
+### Blog Post Structure
+
+#### 1. OPENING HOOK (2-3 paragraphs)
+- Start with a relatable problem or statistic
+- Paint a picture of the reader's current frustration
+- Build tension around the pain point
+- Make it immediately relevant to the target audience
+- Examples:
+  - "For small business owners, [specific frustration] is a weekly headache..."
+  - "Every contract review costs you hours you don't have..."
+
+#### 2. PROBLEM DEEP DIVE (2-3 paragraphs)
+- Elaborate on the challenge
+- Use specific scenarios and examples
+- Reference customer feedback and real experiences
+- Show you understand their world
+- Build empathy before presenting the solution
+
+#### 3. SOLUTION INTRODUCTION (2-3 paragraphs)
+- Introduce the new feature as the answer
+- Focus on the outcome, not the technology
+- Use simple, non-technical language
+- Paint a vision of their improved workflow
+- Make it feel accessible and easy to adopt
+
+#### 4. KEY BENEFITS (4-6 bullet points or short sections)
+- Each benefit gets 1-2 sentences of explanation
+- Focus on tangible outcomes
+- Quantify when possible (time saved, efficiency gained)
+- Format examples:
+  - "**Save Time**: Instantly spot changes instead of manually comparing versions line by line."
+  - "**Reduce Risk**: Never miss a critical clause change buried in a 50-page contract."
+  - "**Work Faster**: Share clean redlines with your team in seconds, not hours."
+
+#### 5. HOW IT WORKS (2-3 paragraphs or numbered steps)
+- Explain the feature simply (3-5 steps max)
+- Use plain language, avoid technical jargon
+- Focus on user actions, not system processes
+- Optional: Include references to screenshots, demos, or visuals
+- Keep it high-level—don't overwhelm with details
+
+#### 6. REAL-WORLD USE CASES (2-3 paragraphs)
+- Provide 1-2 concrete scenarios
+- Use customer quotes from feedback documents
+- Show before/after comparisons
+- Make it relatable and specific
+- Examples:
+  - "A founder reviewing an investment agreement can..."
+  - "A small business owner comparing vendor contracts..."
+
+#### 7. SOCIAL PROOF & TESTIMONIALS (1-2 paragraphs)
+- Include authentic customer quotes
+- Reference beta testers or early adopters
+- Use specific, credible examples
+- Build trust and reduce skepticism
+
+#### 8. CALL TO ACTION (1-2 paragraphs)
+- Clear, single action to take
+- Make it frictionless and inviting
+- Use action-oriented language
+- Create gentle urgency without pressure
+- Examples:
+  - "Ready to simplify your contract reviews? Try [Feature] free today."
+  - "See [Feature] in action. Start your free trial: [link]"
+
+#### 9. CLOSING (1 paragraph)
+- Reinforce the key benefit
+- End on an inspiring or forward-looking note
+- Optional: Invite feedback or questions
+
+### Tone & Style Guidelines
+
+- **Professional**: Establish authority and credibility
+- **Conversational**: Accessible, not academic or overly formal
+- **Educational**: Teach, don't just sell
+- **Empathetic**: Show understanding of audience challenges
+- **Action-Oriented**: Guide readers toward a clear next step
+
+### Content Marketing Best Practices (2025)
+
+- **Quality Over Quantity**: Focus on helpful, comprehensive content
+- **Answer Engine Optimization (AEO)**: Structure content to directly answer user questions
+- **E-E-A-T Compliance**: Demonstrate Expertise, Experience, Authoritativeness, Trustworthiness
+- **User-Centric**: Address buyer journey stage (awareness, consideration)
+- **SEO Integration**: Use keywords naturally without stuffing
+- **Scannable Format**: Headers, bullets, short paragraphs, white space
+
+### Visual & Formatting Recommendations
+
+- Use H2/H3 subheadings for each section
+- Short paragraphs (3-4 sentences max)
+- Bullet points for lists of benefits
+- Bold key phrases (sparingly)
+- Include placeholders for visuals: "[Screenshot: Feature in action]"
+- White space between sections for easy scanning
+
+### Advanced Techniques to Apply
+
+#### Problem-Solution Framework
+- Start with pain → build tension → introduce solution → show transformation
+- Use storytelling to make it memorable
+- Position feature as the hero that saves the day
+
+#### Pillar Content Principles
+- Make it comprehensive enough to be valuable standalone
+- Link to related resources or future content
+- Position as authoritative resource on the topic
+
+#### Trust Building
+- Use real customer quotes from source documents
+- Include specific, quantifiable benefits
+- Reference beta testing or development process
+- Show expertise through detailed explanations
+
+## EXAMPLES OF GOOD BLOG POSTS
+
+The following examples demonstrate the style, tone, and structure we're aiming for:
+
+{EXAMPLES_PLACEHOLDER}
+
+## OUTPUT REQUIREMENTS
+
+You must return a valid JSON object with this exact structure:
+
+```json
+{
+  "title": "Compelling blog post title (50-80 characters, SEO-friendly)",
+  "content": "The full blog post content with line breaks preserved as \\n characters"
+}
+```
+
+### CRITICAL JSON Formatting Rules - FOLLOW EXACTLY:
+
+**THESE RULES ARE MANDATORY - VIOLATIONS WILL CAUSE SYSTEM FAILURE:**
+
+1. **ESCAPE ALL DOUBLE QUOTES IN STRING VALUES**
+   - When including customer quotes, you MUST escape internal quotes
+   - WRONG: "content": "Users say "this is great" for business"
+   - CORRECT: "content": "Users say \"this is great\" for business"
+   - BETTER: "content": "Users say 'this is great' for business"
+
+2. **USE SINGLE QUOTES FOR CUSTOMER QUOTES**
+   - Prefer single quotes to avoid escaping: 'quote here'
+   - This prevents JSON parsing errors
+
+3. **VALIDATE YOUR OUTPUT**
+   - Your JSON must be parseable by standard parsers
+   - Every opening quote needs proper closing
+   - Check for unescaped quotes before responding
+
+4. **STANDARD REQUIREMENTS:**
+   - Escape line breaks as `\n` in the content string
+   - title should be SEO-friendly and compelling (50-80 characters)
+   - The entire response must be valid JSON
+   - Do not include any text outside the JSON object
+   - Do not use markdown code blocks - return raw JSON only
+   - Use \\n\\n for paragraph breaks
+   - Use section headers (## Header) for structure
+
+## CRITICAL REMINDERS
+
+1. **Simple Language**: The audience is NOT legally trained—avoid legalese and jargon
+2. **Focus on Outcomes**: TIME SAVED and EASE OF USE are the primary selling points
+3. **Not Legal Advice**: Don't make it sound like legal advice or a lawyer replacement
+4. **Authentic Quotes**: Pull real, relatable quotes from Customer Feedback documents - USE SINGLE QUOTES for all customer quotes
+5. **Quantify Benefits**: Use specific numbers (hours saved, clicks reduced, etc.)
+6. **Educational Tone**: Teach readers about the problem and solution
+7. **SEO-Conscious**: Include feature name and relevant keywords naturally
+8. **Scannable Structure**: Use headers, bullets, short paragraphs
+
+## FINAL CHECKLIST
+
+Before finalizing the blog post, verify:
+- ✓ Title is 50-80 characters, SEO-friendly, and compelling
+- ✓ Opening hook addresses a real, relatable pain point
+- ✓ Problem is thoroughly explained with empathy
+- ✓ Solution is introduced clearly and simply
+- ✓ Benefits are outcome-focused and quantifiable
+- ✓ "How it works" section is simple and accessible
+- ✓ Use cases are specific and relatable
+- ✓ Customer quotes are authentic and credible
+- ✓ CTA is clear, specific, and frictionless
+- ✓ Content is 400-800 words and scannable
+- ✓ Tone is professional yet conversational
+- ✓ Language is jargon-free
+
+Now generate the blog post based on the topic and source documents provided.

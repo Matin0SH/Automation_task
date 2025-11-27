@@ -1,0 +1,238 @@
+# NEWSLETTER EMAIL JUDGE PROMPT
+
+## TASK
+Evaluate the newsletter email for quality, effectiveness, and adherence to B2B SaaS email marketing best practices.
+
+## EVALUATION CRITERIA
+
+Score each criterion out of 10, then calculate the average:
+
+### 1. SUBJECT LINE EFFECTIVENESS (10 points)
+- **Length**: 50-80 characters (optimal for mobile preview)
+- **Clarity**: Immediately communicates value or sparks curiosity
+- **Action-Oriented**: Uses verbs or poses compelling questions
+- **No Spam Triggers**: Avoids excessive caps, exclamation marks, or "FREE!!!"
+- **Relevance**: Directly relates to the feature being announced
+
+**Scoring Guide**:
+- 9-10: Perfect length, highly compelling, clear value prop, no spam triggers
+- 7-8: Good length and clarity, minor improvements possible
+- 5-6: Acceptable but could be more engaging or clearer
+- 3-4: Too long/short, vague, or contains spam triggers
+- 1-2: Fails multiple criteria, unlikely to drive opens
+
+### 2. OPENING HOOK STRENGTH (10 points)
+- **Empathy**: Acknowledges a real pain point the audience faces
+- **Relatability**: Uses scenarios the target audience experiences
+- **Engagement**: Grabs attention within first 2 lines
+- **Conversational Tone**: Sounds human, not corporate
+
+**Scoring Guide**:
+- 9-10: Immediately relatable, empathetic, engaging, conversational
+- 7-8: Good hook with minor tweaks needed
+- 5-6: Somewhat engaging but could be stronger
+- 3-4: Generic or doesn't connect with audience pain points
+- 1-2: Weak, corporate, or irrelevant opening
+
+### 3. VALUE PROPOSITION CLARITY (10 points)
+- **Clear Benefits**: Feature benefits are obvious within first 3 sentences
+- **Outcome-Focused**: Emphasizes what users achieve, not feature specs
+- **Quantifiable**: Uses specific numbers (time saved, efficiency gained)
+- **Simple Language**: No jargon, accessible to non-technical readers
+
+**Scoring Guide**:
+- 9-10: Crystal clear value, quantified benefits, simple language
+- 7-8: Clear value with room for more specificity
+- 5-6: Value present but could be clearer or more quantified
+- 3-4: Vague benefits or too technical
+- 1-2: Value proposition unclear or missing
+
+### 4. STRUCTURE & SCANNABILITY (10 points)
+- **Short Paragraphs**: 2-3 lines maximum per paragraph
+- **Line Breaks**: Adequate white space between sections
+- **Bullet Points**: Benefits listed clearly with visual breaks
+- **Mobile-Friendly**: Easy to read on small screens
+- **Logical Flow**: Hook → Context → Solution → Benefits → Proof → CTA
+
+**Scoring Guide**:
+- 9-10: Perfectly scannable, mobile-friendly, logical flow
+- 7-8: Good structure with minor formatting improvements
+- 5-6: Acceptable but could use better breaks or bullets
+- 3-4: Dense paragraphs, hard to scan
+- 1-2: Wall of text, poor structure
+
+### 5. SOCIAL PROOF & CREDIBILITY (10 points)
+- **Authentic Quotes**: Uses real customer feedback from source documents
+- **Relatable Testimonials**: Quotes resonate with target audience
+- **Specific Use Cases**: Shows real-world application
+- **Trust Signals**: Includes credibility markers (beta users, actual customers)
+
+**Scoring Guide**:
+- 9-10: Authentic, relatable quotes with strong credibility
+- 7-8: Good social proof, could be more specific
+- 5-6: Has proof but generic or weak
+- 3-4: Weak or unconvincing testimonials
+- 1-2: Missing social proof or sounds fabricated
+
+### 6. CALL-TO-ACTION EFFECTIVENESS (10 points)
+- **Clarity**: Single, specific action to take
+- **Frictionless**: Easy to execute, no barriers
+- **Action-Oriented Language**: Uses verbs ("Try", "Get", "Start")
+- **Visibility**: Stands out visually in the email
+- **Urgency**: Creates gentle motivation to act now (without pressure)
+
+**Scoring Guide**:
+- 9-10: Crystal clear, single CTA, easy to act on, visible
+- 7-8: Clear CTA with minor improvements possible
+- 5-6: CTA present but could be clearer or more compelling
+- 3-4: Vague, multiple CTAs, or hard to find
+- 1-2: Missing or ineffective CTA
+
+### 7. TONE & VOICE AUTHENTICITY (10 points)
+- **Conversational**: Sounds like a colleague, not a sales pitch
+- **Personal**: Uses "you" and "we", includes personal touches
+- **Helpful**: Positions feature as solving their problem
+- **Human**: Avoids corporate buzzwords and marketing jargon
+- **Consistent**: Maintains tone throughout
+
+**Scoring Guide**:
+- 9-10: Perfectly conversational, personal, helpful, authentic
+- 7-8: Good tone with occasional lapses
+- 5-6: Mostly conversational but some corporate language
+- 3-4: Frequently sounds salesy or corporate
+- 1-2: Completely corporate/salesy tone
+
+### 8. AUDIENCE RELEVANCE (10 points)
+- **Target Alignment**: Speaks directly to small business owners/founders
+- **Pain Point Accuracy**: Addresses real challenges from customer feedback
+- **Language Appropriateness**: Uses terms and examples audience understands
+- **Context Awareness**: Shows understanding of their world
+
+**Scoring Guide**:
+- 9-10: Perfect audience alignment, highly relevant
+- 7-8: Good relevance with minor misalignments
+- 5-6: Generally relevant but could be more specific
+- 3-4: Somewhat off-target or generic
+- 1-2: Poor audience understanding
+
+### 9. BENEFIT COMMUNICATION (10 points)
+- **Time Savings Emphasized**: Clearly states hours/minutes saved
+- **Ease of Use Highlighted**: Makes feature sound simple and accessible
+- **Specific Outcomes**: Lists 3-5 concrete benefits
+- **Prioritization**: Most important benefits come first
+- **Tangible**: Benefits are real and measurable, not vague promises
+
+**Scoring Guide**:
+- 9-10: Specific, quantified, prioritized, tangible benefits
+- 7-8: Good benefits with room for more specificity
+- 5-6: Benefits present but vague or poorly prioritized
+- 3-4: Weak or feature-focused instead of benefit-focused
+- 1-2: Missing benefits or entirely feature-focused
+
+### 10. EMAIL LENGTH & PACING (10 points)
+- **Word Count**: 200-400 words (optimal for engagement)
+- **Conciseness**: No fluff or unnecessary details
+- **Pacing**: Moves reader smoothly from hook to CTA
+- **Completeness**: Covers all necessary points without overwhelming
+
+**Scoring Guide**:
+- 9-10: Perfect length, concise, well-paced, complete
+- 7-8: Good length with minor wordiness
+- 5-6: Acceptable but could be tighter or more complete
+- 3-4: Too long/short or poorly paced
+- 1-2: Significantly over/under word count, poor pacing
+
+## RED FLAGS (Automatic Quality Failure)
+
+If ANY of these are present, the email fails quality check regardless of score:
+
+1. **Legal Advice Implication**: Sounds like providing legal counsel or replacing lawyers
+2. **Overpromising**: Makes unrealistic claims about the feature
+3. **Spam Triggers**: Subject line uses "FREE!!!", "ACT NOW!!!", excessive caps
+4. **Jargon Overload**: Uses technical or legal terms without explanation
+5. **Missing CTA**: No clear next step for the reader
+6. **No Customer Voice**: Doesn't reference any customer feedback or quotes
+7. **Feature Dump**: Lists technical features without explaining benefits
+8. **Corporate Speak**: Uses buzzwords like "synergy", "leverage", "best-in-class"
+9. **Misleading Subject**: Subject line doesn't match email content
+10. **Too Long**: Over 500 words (loses reader attention)
+
+## SCORING & PASS/FAIL
+
+### Calculate Final Score:
+1. Score each of the 10 criteria (1-10 points each)
+2. Calculate average: (Sum of all scores) / 10
+3. Round to nearest whole number
+
+### Pass/Fail Criteria:
+- **PASS**: Score ≥ 7 AND no red flags present
+- **FAIL**: Score < 7 OR any red flag present
+
+## FEEDBACK STRUCTURE
+
+Provide detailed, actionable feedback:
+
+### STRENGTHS
+- List 3-5 specific things the email does well
+- Reference exact phrases or structural elements
+- Explain why these work for the target audience
+
+### WEAKNESSES
+- List 2-4 specific issues or missed opportunities
+- Provide concrete examples from the email
+- Explain impact on reader engagement or conversion
+
+### SUGGESTIONS
+- Provide 3-5 actionable improvements
+- Be specific (e.g., "Change line 3 to..." not "Improve tone")
+- Prioritize high-impact changes
+- Include alternative wording where helpful
+
+## THE NEWSLETTER EMAIL TO EVALUATE
+
+{POST_CONTENT_PLACEHOLDER}
+
+## OUTPUT REQUIREMENTS
+
+Return a valid JSON object with this exact structure:
+
+```json
+{
+  "score": 8,
+  "passes_quality": true,
+  "criteria_scores": {
+    "subject_line_effectiveness": 9,
+    "opening_hook_strength": 8,
+    "value_proposition_clarity": 8,
+    "structure_scannability": 9,
+    "social_proof_credibility": 7,
+    "cta_effectiveness": 8,
+    "tone_voice_authenticity": 9,
+    "audience_relevance": 8,
+    "benefit_communication": 8,
+    "email_length_pacing": 8
+  },
+  "feedback": {
+    "strengths": [
+      "Strength 1 with specific example",
+      "Strength 2 with specific example",
+      "..."
+    ],
+    "weaknesses": [
+      "Weakness 1 with specific example",
+      "Weakness 2 with specific example",
+      "..."
+    ],
+    "suggestions": [
+      "Specific actionable suggestion 1",
+      "Specific actionable suggestion 2",
+      "..."
+    ]
+  },
+  "red_flags": [
+    "List any red flags found, or empty array if none"
+  ]
+}
+```
+
+Now evaluate the newsletter email above using these criteria.
