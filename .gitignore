@@ -3,8 +3,7 @@
 .env.local
 .env.*.local
 
-# Configuration files with sensitive data
-config.json
+# Configuration files with sensitive data (keep config.json, ignore local overrides)
 config.local.json
 
 # Claude Code settings

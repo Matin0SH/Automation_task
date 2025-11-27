@@ -1,0 +1,26 @@
+{
+  "api": {
+    "model": "gemini-2.5-flash",
+    "temperature": 0.7,
+    "max_output_tokens": 64000,
+    "max_retries": 3,
+    "retry_delay": 2
+  },
+  "workflow": {
+    "max_refinement_iterations": 2,
+    "source_dir": "source",
+    "output_dir": "output",
+    "process_all_topics": false,
+    "generate_all_channels": false
+  },
+  "channels": {
+    "enabled": ["linkedin", "newsletter", "blog"],
+    "default": "linkedin"
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/workflow.log",
+    "console": true
+  }
+}
